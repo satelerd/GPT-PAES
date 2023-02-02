@@ -21,7 +21,7 @@ def get_prompt(page):
     """Read the txt file and append it to the prompt"""
     prompt = """Lo siguiente es la PAES, la prueba mas importante de transicion universitaria en chile. Tu rol como destacado profesor de lengua española y literatura es conseguir la mejor nota en la prueba de competencia lectora.
 
-La prueba conciste en un texto, seguido de 7 preguntas de seleccion multiple. al final de las preguntas, deberas crear un objeto en formato json con las respuestas correspodientes. (ejemplo: {"0": "a", "1": "b", "2": "c", "3": "d", "4": "e", "5": "f", "6": "g"})
+La prueba conciste en un texto, seguido de 7 preguntas de seleccion multiple. Al final de las preguntas, deberas crear un objeto en formato json con las respuestas correspodientes. (ejemplo: {"0": "a", "1": "b", "2": "c", "3": "d", "4": "e", "5": "f", "6": "g"})
 ###
 
 $$$
@@ -29,8 +29,9 @@ $$$
 ###
 Las respuestas correctas (en formato json) son las siguientes:
 {"""
+#     :"""
 
-    with open('./PAES/lenguaje/-0.txt', 'r', encoding='utf-8') as f:
+    with open('./PAES/lenguaje/1.txt', 'r', encoding='utf-8') as f:
         prompt = prompt.replace('$$$', f.read())
 
     print("get_prompt ready")
@@ -43,19 +44,19 @@ def gpt3_call(prompt):
     answers = "{"
 
     response = openai.Completion.create(
-        # model="text-davinci-003",
-        model="text-ada-001",
+        model="text-davinci-003",
+        # model="text-ada-001",
         prompt= prompt,
         temperature=0.7,
-        max_tokens=200,
+        max_tokens=60,
         top_p=1,
         frequency_penalty=0,
         presence_penalty=0
     )
     answers += response.choices[0].text
+    print(answers)
     answers = json.loads(answers)
     print()
-    print(answers)
     
 
     print("gpt3_call ready")
@@ -73,9 +74,9 @@ def compare_answers(gpt3_answers):
 
     for i in range(0, len(gpt3_answers)):
         print(i, " GPT-3 answer: ", gpt3_answers[str(i)])
-        print(i, " Correct answer: ", correct_answer[i])
+        print(i, " Correct answer: ", correct_answer[i+23])
         print()
-        if gpt3_answers[str(i)] == correct_answer[i]:
+        if gpt3_answers[str(i)] == correct_answer[i+23]:
             correct += 1 
             gpt3_answers[str(i)] = gpt3_answers[str(i)] + " (correct)"
         else:
