@@ -1,0 +1,78 @@
+LECTURA 6 (Preguntas 41 a 49)
+Artículo de divulgación escrito por Sarah Romero. Publicado el 2021.
+Maneras en que la tecnología nos ayuda a luchar contra el cambio climático
+La inteligencia artificial y las nuevas tecnologías son aliadas muy poderosas de cara a frenar la emergencia climática. Te mostramos algunos ejemplos. Los avances tecnológicos, en particular el descubrimiento y uso de combustibles fósiles, han contribuido al cambio climático, eso ya lo sabemos todos, pero también es cierto que han permitido a la humanidad tomar conciencia del impacto del ser humano en el planeta y desarrollar técnicas para abordar el calentamiento global. Hoy te hablamos de algunas innovaciones tecnológicas que podrían ayudar a la humanidad a evitar el daño catastrófico que podría causar un aumento continuo de las temperaturas globales, pues los gases contaminantes hacen que las temperaturas se incrementen cada vez más y que el clima cambie, lo que, a su vez, redunda en sequías y aumenta el riesgo de incendios a lo que se sumaría la deforestación y la desertificación de nuestro planeta, cada día más asfixiado por nuestro comportamiento. La quema de combustibles fósiles para satisfacer la creciente demanda de energía ha elevado las emisiones de dióxido de carbono a un nivel récord y parece que la innovación puede servirnos de salvavidas para luchar contra esta emergencia climática. He aquí unos ejemplos en los que la tecnología está jugando su parte en la reducción del aumento del nivel del mar y el calentamiento de las temperaturas. Después de todo, los gigantes tecnológicos influyen en las decisiones de miles de millones de consumidores todos los días. Los científicos del clima dicen que las emisiones globales deben reducirse muchísimo de aquí a 2030 para evitar las peores consecuencias del calentamiento.
+
+Reducir las emisiones de CO2  
+Los científicos atribuyen el aumento de la temperatura media a las emisiones de gases de efecto invernadero provocadas por el hombre, entre ellos el dióxido de carbono (CO2), cuyas concentraciones han aumentado casi un 50 % desde que comenzó la revolución industrial. Con tecnologías de captura, utilización y almacenamiento de carbono, como el desarrollado en un proyecto de Reino Unido que explorará la captura y almacenamiento de carbono del Reino Unido a partir de energía proveniente de residuos, se podría reducir las emisiones de CO2 hasta el equivalente al uso anual de energía de más de 3 millones de hogares en el Reino Unido.
+
+Biomasa oceánica  
+Si bien la biomasa (un tipo de energía) se puede usar para energía renovable con carbono negativo, siempre será un recurso limitado debido a las limitaciones del uso de la tierra. Pero en el espacio oceánico podríamos cosechar de manera sostenible. Pero, ¿qué exactamente? Algas, por supuesto. O, más bien, macroalgas. Las macroalgas crecen rápidamente: pueden crecer dos centímetros y medio al día. También extraen el CO2 del agua de mar y si podemos recogerlas y mantener el carbono aislado para que no vuelva a entrar a la atmósfera o al océano, ahí tenemos la solución. Los proyectos para la recolección de algas a gran escala se están desarrollando en una organización de investigación noruega, donde hablan de contar con dos o tres cosechas al año de estas macroalgas. Pero antes de que las algas puedan cultivarse y cosecharse a gran escala, sería necesario realizar una investigación para ver cómo afectaría esto a los ecosistemas submarinos.
+
+Baterías para vehículos eléctricos
+Las baterías son cada vez más livianas y más pequeñas que las baterías recargables anteriores. Se pueden cargar más rápido y con más frecuencia. A medida que su peso y precio continúan cayendo, están desempeñando un papel cada vez más fundamental en la descarbonización del sector del transporte al hacer que los vehículos eléctricos sean más baratos, algo que permitirá la integración de más y más tecnología renovable.
+
+Herramientas de Inteligencia Artificial
+La ciencia es una herramienta eficaz para redefinir la realidad. La próxima generación de motores de búsqueda debe apoyar los objetivos sociales. Las nuevas herramientas de inteligencia artificial que están desarrollando empresas emergentes pueden ayudar a este propósito. Pero, ¿quién elige la fuente de información? Ahí es donde debe entrar la ciencia para poner consenso en la comunicación.
+
+¿Reparar el clima?  
+El  Centro  de  Reparación  del  Clima  de  la Universidad de  Cambridge (Inglaterra) está investigando una serie de ideas que repararían el daño causado por la contaminación que causa el hombre. Entre sus postulados se encuentra la posibilidad de volver a congelar los polos. ¿De qué forma? Iluminando las nubes sobre ellos, esencialmente rociando pequeñas gotas de sal en el cielo para ayudar a las nubes a reflejar la radiación de regreso al espacio. Otra de las soluciones propuestas reside en "reverdecer" los océanos, esencialmente fertilizándolos para estimular el crecimiento de materia vegetal y algas que podrían absorber más CO2. Sin embargo, este último aspecto no cuenta con la aprobación de los climatólogos y biólogos que opinan que las consecuencias de llevar esta empresa a cabo acabarían con una enorme interrupción en los ecosistemas de los océanos y tampoco capturaría el suficiente CO2 para compensar las emisiones de gases de efecto invernadero humanas.
+
+¿Qué podemos hacer nosotros como consumidores de tecnología? Por nuestra parte, podemos educarnos sobre lo que implica la tecnología que compramos, cuáles son los impactos climáticos y cuánto tiempo puede durar un producto o dispositivo concreto. También podemos pensar en qué es lo que vamos a comprar primero, antes de preguntarnoslo después. Pues la compra, el envío, la entrega y la devolución del material también contribuyen al calentamiento global. Podemos ayudar haciendo que nuestros productos o dispositivos existentes duran más, reemplazando su batería o componentes, haciendo una reparación del mismo o incluso comprando productos de segunda mano.
+
+Romero, S. (3 de marzo de 2021). Maneras en que la tecnología nos ayuda a luchar contra el cambio climático. Muy interesante. https://www.muyinteresante.es/tecnologia/fotos/maneras-en-que-la-tecnologia-nos-ayuda-a-luchar-contra-el-cambio-climatico-191614713036/8
+--------------------------------
+
+41.  ¿Cuál es el propósito del texto leído?  
+A) Demostrar los daños causados por el aumento del CO2. 
+B) Explicar los efectos del uso de combustibles contaminantes.  
+C) Motivar el interés sobre los avances en el ámbito tecnológico.  
+D) Presentar innovaciones tecnológicas para revertir el cambio climático. 
+
+42. ¿Qué recurso utilizado en el texto permite generar cercanía con el lector?  
+A) La inclusión de referencias temporales como “de aquí a 2030”. 
+B) La utilización de subtítulos para tratar las diferentes propuestas.   
+C) La mención de elementos cotidianos como “vehículos eléctricos”. 
+D) La  utilización  de  expresiones  en  primera  persona  plural  como  “eso  ya  lo sabemos todos”.
+
+43.  A  partir  del  párrafo  inicial,  ¿cómo  se  puede  calificar  el  aporte  de  los  avances tecnológicos en la lucha de la humanidad contra el cambio climático?  
+A) Complejo, pues involucra una serie de consideraciones éticas. 
+B) Peligroso, pues genera un impacto que es ignorado por la ciencia. 
+C) Paradójico, pues presenta tanto aspectos positivos como negativos.  
+D) Contraproducente, pues proporciona más problemas que soluciones.
+
+44. ¿Qué característica tienen en común las innovaciones mencionadas en el texto?  
+A) La inclusión de energía renovable. 
+B) La utilización de recursos naturales. 
+C) La aplicación de inteligencia artificial.  
+D) La incorporación de avances tecnológicos.
+
+45.  ¿Qué advertencia plantea la autora acerca del cultivo de algas?  
+A) Que tiene que realizarse a gran escala. 
+B) Que debe ser objeto de un estudio previo. 
+C) Que utiliza un recurso ilimitado en el océano. 
+D) Que es un problema para el ecosistema marino.     
+
+46.  Según  el  texto,  ¿qué  característica  de  las  baterías  de  los  vehículos  eléctricos facilitará la integración de más tecnología renovable?  
+A) El precio. 
+B) El tamaño. 
+C) La estructura. 
+D) La velocidad de carga.     
+
+47. ¿Cuál  de  las  innovaciones  descritas  en  el  texto  es  objetada  por  la  comunidad científica?  
+A) El congelamiento de los polos. 
+B) El almacenamiento del carbono. 
+C) El empleo de inteligencia artificial. 
+D) El reverdecimiento de los océanos.
+
+48.  En el último párrafo, ¿a quiénes critica indirectamente la autora del texto?  
+A) A quienes compran tecnología sin informarse. 
+B) A quienes fabrican aparatos tecnológicos desechables. 
+C) A quienes promueven el uso excesivo de la tecnología. 
+D) A quienes distribuyen artículos tecnológicos a bajo costo.     
+
+49.  ¿Qué función cumplen las preguntas incluidas en el texto?  
+A) Plantean una invitación al lector para que reflexione en torno a las consecuencias del cambio climático. 
+B) Destacan  las  reflexiones  de  la  autora  respecto del  rol de  la  tecnología  en  la lucha contra el cambio climático. 
+C) Introducen explicaciones de la autora sobre los proyectos de innovación para enfrentar el cambio climático. 
+D) Representan  las  dudas  de  los  lectores  acerca  de  los  alcances  que  tiene  el cambio climático. 

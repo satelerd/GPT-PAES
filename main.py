@@ -9,7 +9,7 @@ import requests
 
 # Variables
 # --------------------------
-page = 1
+page = 8
 answers = []
 
 openai.api_key = os.getenv("OPENAI_API_KEY")
@@ -31,7 +31,7 @@ Las respuestas correctas (en formato json) son las siguientes:
 {"""
 #     :"""
 
-    with open('./PAES/lenguaje/1.txt', 'r', encoding='utf-8') as f:
+    with open(f'./PAES/lenguaje/{page}.txt', 'r', encoding='utf-8') as f:
         prompt = prompt.replace('$$$', f.read())
 
     print("get_prompt ready")
@@ -48,7 +48,7 @@ def gpt3_call(prompt):
         # model="text-ada-001",
         prompt= prompt,
         temperature=0.7,
-        max_tokens=60,
+        max_tokens=70,
         top_p=1,
         frequency_penalty=0,
         presence_penalty=0
@@ -94,13 +94,34 @@ def compare_answers(gpt3_answers):
 # Main
 # --------------------------
 if __name__ == '__main__':
+    total_result = []
     for i in range(0, page):
-        prompt = get_prompt(i)
-        gpt3_answers = gpt3_call(prompt)
-        results = compare_answers(gpt3_answers)
+
+        # exceptional cases
+        if i == 1:
+            continue
+            for j in range(1, 3):
+                prompt = get_prompt(f"{i}.{j}")
+                gpt3_answers = gpt3_call(prompt)
+                total_result += gpt3_answers
+
+                # results = compare_answers(gpt3_answers)
+        elif i == 3:
+            for j in range(1, 3):
+                prompt = get_prompt(f"{i}.{j}")
+                gpt3_answers = gpt3_call(prompt)
+                total_result += gpt3_answers
+
+                # results = compare_answers(gpt3_answers)
+        else:
+            prompt = get_prompt(i)
+            gpt3_answers = gpt3_call(prompt)
+            total_result += gpt3_answers
+
+            # results = compare_answers(gpt3_answers)
 
         # answers.append(gpt3_answers)
 
-        print("Page: ", i)
+        print("Texto: ", i+1)
         print()
 

@@ -1,0 +1,71 @@
+Artículo escrito por Lorenzo Díaz, publicado en la revista Arquine el 2021. 
+La maqueta, de la simulación al engaño
+
+Cuando llegaba el momento de aventurarse y realizar una obra pictórica de gran envergadura, los artistas del renacimiento italiano hacían una prueba preliminar de los pigmentos aplicando una muestra, una pequeña mancha, una macchietta o manchita, con el fin de probar y corroborar que el resultado era el deseado antes de proceder a usarlo en una gran superficie. Esta “maqueta” no buscaba vender, ni convencer al posible mecenas sobre la ejecución de la obra, era simplemente un método de trabajo, una herramienta. Una maqueta puede revelar secretos, fórmulas efectivas de ejecución. Probablemente esa es la razón por la que Filippo Brunelleschi se negó a presentar un modelo a escala de su propuesta para la cúpula de la Catedral de Florencia, por más que el prestigiado panel calificador se lo pidió. Existe una leyenda urbana que cuenta que el maestro Brunelleschi procedió a explicar la geometría de su cúpula usando una cáscara de huevo para demostrar su resistencia y ligereza. Está claro que el notable arquitecto entendía perfectamente el enorme valor del trabajo con modelos a escala. Se preserva aún en el Museo de la Ópera del Duomo, en Florencia, un modelo en madera de la cúpula y se han rescatado vestigios de un modelo en mampostería al pie de la construcción. Descubierta apenas hace unos años, esta pequeña cúpula se encontraba enterrada precisamente debajo de donde se encuentra el Museo de la Ópera y su estudio permitió descifrar varios de los secretos constructivos de la mítica cúpula. Este modelo, la «cupulita» como le llaman los arqueólogos que la descubrieron, deja en claro el uso recurrente de modelos como herramienta de prueba y sistema didáctico para la posterior construcción del “milagro de la arquitectura” (1).
+La extraordinaria ejecución de la estructura de mampostería más grande del planeta implicó no solo dibujarla, o hacer una o varias maquetas: fue necesario idear el método constructivo. Brunelleschi diseñó la maquinaria, los andamios, el sistema entero para su construcción dejando claro que no bastaba con trazar la geometría perfecta, había que saber cómo modelarla.
+Para Dennis Dollens “Las maquetas son un modo primario de comunicación. Sin ser lenguaje, constituyen un juego de formas, símbolos y materiales comunicativos que esculpen el espacio y transmiten ideas y emociones; son mundos seductores en miniatura: psíquicamente, nos conmueven” (2). En su libro De lo digital a lo analógico, Dollens salta de la maqueta física, espacial y sensorial, a lo digital y virtual. Compara lo sensorial con ese mundo de imaginación de los niños donde un fuerte de sábanas, una casa de muñecas, permiten construir mundos a escala, imaginarios pero reales y tangibles. Las maquetas son herramientas físicas y palpables que materializan lo imaginado, permitiendo comprobar situaciones, funcionamientos, recorridos, sombras y contrastes de manera tangible.
+La reciente incursión de las herramientas computacionales en el modelaje de la arquitectura crea nuevos horizontes. La verificación de ideas y conceptos toma toda una nueva dimensión, una que permite transportar ya, después de 40 años de evolución, el quehacer del diseño arquitectónico casi en su totalidad al mundo virtual. Un salto escabroso que ha permitido imaginar nuevas dimensiones pero que, a mi forma de ver, corre el enorme riesgo de ahuyentar el verdadero sentido de proporción, aquel que parte de dividir en dos una determinada distancia sin la necesidad de lo digital, usando la geometría básica y pura. 
+Para Otl Aicher, fundador de la mítica escuela de ULM ‒escuela de diseño que surgió a mediados de los años 50 y que desapareció en 1968‒, “la comunicación analógica produce comprensión porque está acoplada a la percepción sensorial, ante todo con el ver. Su dimensión científica es la geometría, la matemática de las posiciones en contraposición a la matemática de las magnitudes. Hay un estrecho acoplamiento entre percepción visual y pensar, precisamente la visión analógica” (3). Como es de pensarse, Aicher privilegiaba un reloj analógico sobre uno digital, simplemente le parecía que en lugar de decirle la hora le ayudaba a comprender el tiempo. 
+Las maquetas no deberían buscar simular la realidad final, deberían de ayudar a comprender la experiencia que la arquitectura causará. Modelar no la construcción sino el espacio. La capacidad de procesamiento de datos de los equipos de cómputo nos ha llevado a la creación de imágenes “foto realistas” (el entrecomillado es intencional) que, al igual que el reloj digital, nos da la hora con precisión astronómica, pero dificulta la comprensión del tiempo. El “render”, o “representación” en español, busca más que explorar, engañar: pasamos de la simulación a la mentira. 
+Frei Otto hizo del modelo físico, la maqueta, su herramienta de pensamiento. Su arquitectura nace de la inspiración del juego entre un filamento y unas pompas de jabón, emulando geometrías que, en sus tiempos, eran imposibles de computar en modelos digitales. Otto encontró en la creación de modelos, de todas dimensiones y complejidades, la fuente de verificación para espacios nunca antes imaginados. 
+“En toda su poética fragilidad, los modelos de Otto cuentan historias de una estética operativa que oscila entre la precisión de instrumentos científicos y la imaginación de artefactos artísticos. El debate es entonces sobre nada menos que la reformulación de la historia de la maqueta arquitectónica. En otras palabras, si uno busca mapear la historia de la arquitectura ‒tradicionalmente vista como la historia de los edificios y los estilos‒ como una historia de los procesos, las prácticas, y las operaciones de diseño, si uno se dispone a entender el cambio del énfasis de “producto del significado” a la “producción del significado” como una equivalente lectura de la arquitectura con un acento fundamentalmente diferente, entonces los modelos experimentales de Frei Otto ofrecen un fascinante punto de partida para tal empresa” (4).
+La arquitectura limita el aprendizaje usando la prueba y error como práctica definitiva. Si se han de cometer errores estos deberán de hacerse antes de la construcción final. Todo error posterior puede resultar caro, si no es que fatal. La simulación de posibles escenarios resulta, entonces, fundamental a la praxis. Imaginar y probar es la única manera de engendrar. 
+Renzo Piano estudió sus primeros dos años en la escuela de arquitectura de Florencia, encontrando en el más famoso de sus arquitectos, Brunelleschi, inspiración para una carrera en la que usaría los modelos siempre. La maqueta de la linternilla de la cúpula, que Brunelleschi dejó a su muerte, y que inspiraría a Piano, permitió a los constructores concluirla póstumamente. 
+Fue así como Piano se ciñó a “un principio fundamental: el arquitecto no solo debe preocuparse por el objeto final, debe también inventar las herramientas, inventar el equipo que permita que se construya” (5). 
+---------------------
+
+
+50. Según el texto, ¿cuál era el propósito original de hacer maquetas? 
+A) Verificar la implementación de los procesos involucrados en las operaciones de diseño. 
+B) Demostrar al patrocinador de una obra la factibilidad de una propuesta arquitectónica. 
+C) Corroborar que el resultado de la obra arquitectónica cumpliera con lo esperado. 
+D) Probar las herramientas que serían utilizadas en la construcción de una obra final. 
+
+51. Según el texto, ¿qué permitió el estudio de la “cupulita”? 
+A) Descifrar algunos enigmas relacionados con la construcción de la cúpula. 
+B) Demostrar la autenticidad de uno de los mayores milagros de la arquitectura. 
+C) Reposicionar el valor de la geometría básica y pura de los modelos a escala. 
+D) Reconstruir algunos rasgos de la estructura de mampostería más grande del planeta.
+
+52. ¿Cómo se puede calificar la conducta de Brunelleschi al negarse a presentar su modelo de la cúpula de la Catedral de Florencia? 
+A) Ambiciosa, porque él suponía que un modelo de su proyecto tenía una alta retribución económica. 
+B) Estratégica, porque él conocía el gran valor del trabajo que involucraba la creación de un modelo. 
+C) Oportunista, porque él aprovecharía este modelo para perpetuar su legado como maestro de la arquitectura. 
+D) Interesada, porque él esperaba que su modelo le garantizara la aprobación de la construcción de su obra final.
+
+53. Según el autor, ¿qué riesgo implica el uso de recursos computacionales en el modelaje de la arquitectura? 
+A) Alejar el verdadero sentido de la proporción. 
+B) Llevar las imágenes a nuevas dimensiones. 
+C) Desvirtuar el quehacer del diseño arquitectónico. 
+D) Desestimar el valor de la geometría como ciencia pura.
+
+54. ¿Qué tienen en común Dennis Dollens y Otl Aicher? 
+A) Ambos crearon herramientas computacionales. 
+B) Ambos privilegiaron lo sensorial sobre lo digital. 
+C) Ambos participaron en la escuela de arquitectura de Florencia. 
+D) Ambos influyeron en la perspectiva arquitectónica de Frei Otto.
+
+55. ¿A qué se refiere el autor en el siguiente enunciado? 
+«El “render”, o “representación” en español, busca más que explorar, engañar: pasamos de la simulación a la mentira». 
+A) A que las maquetas encubren errores de los mecanismos de construcción. 
+B) A que las maquetas esconden diferentes secretos constructivos de ejecución. 
+C) A que las maquetas inducen a imaginar creaciones imposibles de materializar. 
+D) A que las maquetas constituyen una representación artificiosa de la obra final.
+
+56. ¿Qué conceptos se relacionan con el reloj digital y el reloj analógico, respectivamente? 
+A) Precisión – Comprensión. 
+B) Simulación – Verificación. 
+C) Imaginación ‒ Materialización. 
+D) Representación – Exploración.
+
+57. Según el autor del texto, ¿qué acciones permiten la creación de una obra? 
+A) Materializar y corroborar. 
+B) Comunicar y demostrar. 
+C) Imaginar y probar. 
+D) Trazar y modelar.
+
+58. ¿Quién inspiró la carrera arquitectónica de Renzo Piano? 
+A) Frei Otto. 
+B) Otl Aicher. 
+C) Dennis Dollens. 
+D) Filippo Brunelleschi.
