@@ -43,8 +43,8 @@ def gpt3_call(prompt):
     answers = "{"
 
     response = openai.Completion.create(
-        model="text-davinci-003",
-        # model="text-ada-001",
+        # model="text-davinci-003",
+        model="text-ada-001",
         prompt= prompt,
         temperature=0.7,
         max_tokens=200,
@@ -65,14 +65,28 @@ def gpt3_call(prompt):
 
 def compare_answers(gpt3_answers):
     """Compare all the answers given by the GPT-3 model with the correct answers"""
+    correct = 0
+    incorrect = 0
     with open('./PAES/lenguaje/clavijero.txt', 'r', encoding='utf-8') as f:
         # get the correct answer and make it a list of strings separated by \n
         correct_answer = f.read().splitlines()
-    for answer in gpt3_answers:
-        if answer == correct_answer:
-            print("Correct answer")
+
+    for i in range(0, len(gpt3_answers)):
+        print(i, " GPT-3 answer: ", gpt3_answers[str(i)])
+        print(i, " Correct answer: ", correct_answer[i])
+        print()
+        if gpt3_answers[str(i)] == correct_answer[i]:
+            correct += 1 
+            gpt3_answers[str(i)] = gpt3_answers[str(i)] + " (correct)"
         else:
-            print("Wrong answer")
+            incorrect += 1
+            gpt3_answers[str(i)] = gpt3_answers[str(i)] + " (incorrect)"
+
+    print()
+    print("compare_answers ready")
+    print("Correct: ", correct)
+    print("Incorrect: ", incorrect)
+    print()
     return
 
 
@@ -85,4 +99,7 @@ if __name__ == '__main__':
         results = compare_answers(gpt3_answers)
 
         # answers.append(gpt3_answers)
+
+        print("Page: ", i)
+        print()
 
