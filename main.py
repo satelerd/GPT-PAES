@@ -40,17 +40,21 @@ def gpt3_call(prompt):
     return
 
 
-def get_corrections():
-    """Read the corrections file with all the real answers to compare with the GPT-3 answers"""
+def compare_answers():
+    """Compare all the answers given by the GPT-3 model with the correct answers"""
     return
 
 
 # Main
 # --------------------------
 if __name__ == '__main__':
-    prompt = get_prompt(page)
-    print(prompt)
-    # answers = gpt3_call(prompt)
-    # corrections = get_corrections()
-    # print(answers)
-    # print(corrections)
+    for i in range(0, page):
+        prompt = get_prompt(i)
+        print(prompt)
+
+
+
+        # answers = gpt3_call(prompt)
+        # corrections = get_corrections()
+        # print(answers)
+        # print(corrections)
