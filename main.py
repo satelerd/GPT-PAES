@@ -21,43 +21,58 @@ def get_prompt(page):
     """Read the txt file and append it to the prompt"""
     prompt = """Lo siguiente es la PAES, la prueba mas importante de transicion universitaria en chile. Tu rol como destacado profesor de lengua española y literatura es conseguir la mejor nota en la prueba de competencia lectora.
 
-La prueba conciste en un texto, seguido de 7 preguntas de seleccion multiple. al final de las preguntas, deberas responder 1  a 1 explicando porque elegiste esa opcion.
+La prueba conciste en un texto, seguido de 7 preguntas de seleccion multiple. al final de las preguntas, deberas crear un objeto en formato json con las respuestas correspodientes. (ejemplo: {"0": "a", "1": "b", "2": "c", "3": "d", "4": "e", "5": "f", "6": "g"})
 ###
 
 $$$
 
 ###
-Las respuestas correctas son las siguientes:
-1.
-"""
+Las respuestas correctas (en formato json) son las siguientes:
+{"""
 
-    with open('./PAES/lenguaje/0.txt', 'r', encoding='utf-8') as f:
+    with open('./PAES/lenguaje/-0.txt', 'r', encoding='utf-8') as f:
         prompt = prompt.replace('$$$', f.read())
-        # this is giving me the UnicodeDecodeError: 'charmap' codec can't decode byte 0x9d in position 2462: character maps to <undefined>
-        # I tried to change the encoding to utf-8 but it didn't work
 
     print("get_prompt ready")
+    print()
     return prompt
 
 
 def gpt3_call(prompt):
     """API call to OpenAI GPT-3"""
+    answers = "{"
+
     response = openai.Completion.create(
         model="text-davinci-003",
+        # model="text-ada-001",
         prompt= prompt,
         temperature=0.7,
-        max_tokens=256,
+        max_tokens=200,
         top_p=1,
         frequency_penalty=0,
         presence_penalty=0
     )
-    print(response)
+    answers += response.choices[0].text
+    answers = json.loads(answers)
+    print()
+    print(answers)
+    
 
-    return
+    print("gpt3_call ready")
+    print()
+    return answers
 
 
-def compare_answers():
+def compare_answers(gpt3_answers):
     """Compare all the answers given by the GPT-3 model with the correct answers"""
+    with open('./PAES/lenguaje/clavijero.txt', 'r', encoding='utf-8') as f:
+        # get the correct answer and make it a list of strings separated by \n
+        correct_answer = f.read().splitlines()
+    for answer in gpt3_answers:
+        if answer == correct_answer:
+            print("Correct answer")
+        else:
+            print("Wrong answer")
     return
 
 
@@ -67,7 +82,7 @@ if __name__ == '__main__':
     for i in range(0, page):
         prompt = get_prompt(i)
         gpt3_answers = gpt3_call(prompt)
-
+        results = compare_answers(gpt3_answers)
 
         # answers.append(gpt3_answers)
 
