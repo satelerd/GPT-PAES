@@ -9,7 +9,11 @@ import requests
 
 # Variables
 # --------------------------
-page = 0
+page = 1
+answers = []
+
+openai.api_key = os.getenv("OPENAI_API_KEY")
+
 
 # Functions
 # --------------------------
@@ -32,11 +36,23 @@ Las respuestas correctas son las siguientes:
         # this is giving me the UnicodeDecodeError: 'charmap' codec can't decode byte 0x9d in position 2462: character maps to <undefined>
         # I tried to change the encoding to utf-8 but it didn't work
 
+    print("get_prompt ready")
     return prompt
 
 
 def gpt3_call(prompt):
     """API call to OpenAI GPT-3"""
+    response = openai.Completion.create(
+        model="text-davinci-003",
+        prompt= prompt,
+        temperature=0.7,
+        max_tokens=256,
+        top_p=1,
+        frequency_penalty=0,
+        presence_penalty=0
+    )
+    print(response)
+
     return
 
 
@@ -50,11 +66,8 @@ def compare_answers():
 if __name__ == '__main__':
     for i in range(0, page):
         prompt = get_prompt(i)
-        print(prompt)
+        gpt3_answers = gpt3_call(prompt)
 
 
+        # answers.append(gpt3_answers)
 
-        # answers = gpt3_call(prompt)
-        # corrections = get_corrections()
-        # print(answers)
-        # print(corrections)
