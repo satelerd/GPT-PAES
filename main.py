@@ -1,4 +1,3 @@
-# write the utf-8 encoding at the top of the file
 # -*- coding: utf-8 -*-
 
 import os
@@ -7,14 +6,10 @@ import json
 import openai
 import requests
 
-# Variables
-# --------------------------
-
-
 
 # Functions
 # --------------------------
-def get_prompt(page):
+def get_prompt(section):
     """Read the txt file and append it to the prompt"""
     prompt = """Lo siguiente es la PAES, la prueba mas importante de transicion universitaria en chile. Tu rol como destacado profesor de lengua española y literatura es conseguir la mejor nota en la prueba de competencia lectora.
 
@@ -28,7 +23,7 @@ Las respuestas correctas (en formato json) son las siguientes:
 {"""
 #     :"""
 
-    with open(f'./PAES/lenguaje/{page}.txt', 'r', encoding='utf-8') as f:
+    with open(f'./PAES/lenguaje/{section}.txt', 'r', encoding='utf-8') as f:
         prompt = prompt.replace('$$$', f.read())
 
     # print("get_prompt ready")
@@ -92,7 +87,7 @@ def compare_answers(gpt3_answers):
 if __name__ == '__main__':
     # Variables
     start_time = time.time()
-    page = 8
+    sections = 8
     answers = []
     openai.api_key = os.getenv("OPENAI_API_KEY")
 
@@ -100,37 +95,37 @@ if __name__ == '__main__':
     print ("Comenzando GPT-PAES Comprension Lectora")
     print()
     
-    # for i in range(0, page):
-    #     print("Respondiendo texto: ", i)
+    for i in range(0, sections):
+        print("Respondiendo texto: ", i)
 
-    #     # getting the prompt
-    #     if i == 1:
-    #         for j in range(1, 3):
-    #             prompt = get_prompt(f"{i}.{j}")
-    #             gpt3_answers = gpt3_call(prompt)
-    #             answers += list(gpt3_answers.values())
+        # the function calls depend on the sections number
+        if i == 1:
+            for j in range(1, 3):
+                prompt = get_prompt(f"{i}.{j}")
+                gpt3_answers = gpt3_call(prompt)
+                answers += list(gpt3_answers.values())
 
-    #     elif i == 3:
-    #         for j in range(1, 3):
-    #             prompt = get_prompt(f"{i}.{j}")
-    #             gpt3_answers = gpt3_call(prompt)
-    #             answers += list(gpt3_answers.values())
+        elif i == 3:
+            for j in range(1, 3):
+                prompt = get_prompt(f"{i}.{j}")
+                gpt3_answers = gpt3_call(prompt)
+                answers += list(gpt3_answers.values())
         
-    #     elif i == 7:
-    #         for j in range(1, 3):
-    #             prompt = get_prompt(f"{i}.{j}")
-    #             gpt3_answers = gpt3_call(prompt)
-    #             answers += list(gpt3_answers.values())
+        elif i == 7:
+            for j in range(1, 3):
+                prompt = get_prompt(f"{i}.{j}")
+                gpt3_answers = gpt3_call(prompt)
+                answers += list(gpt3_answers.values())
 
-    #     else:
-    #         prompt = get_prompt(i)
-    #         gpt3_answers = gpt3_call(prompt)
-    #         answers += list(gpt3_answers.values())
+        else:
+            prompt = get_prompt(i)
+            gpt3_answers = gpt3_call(prompt)
+            answers += list(gpt3_answers.values())
 
-    #     print(answers)
-    #     print()
+        print(answers)
+        print()
 
-    #     # results = compare_answers(gpt3_answers)
+        # results = compare_answers(gpt3_answers)
     
     time.sleep(5.3)
     time_elapsed = time.time() - start_time
