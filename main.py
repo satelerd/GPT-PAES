@@ -97,14 +97,22 @@ if __name__ == '__main__':
     print()
     
     for i in range(0, page):
-        print("Respondiendo texto: ", i+1)
+        print("Respondiendo texto: ", i)
 
         # getting the prompt
         if i == 1:
             for j in range(1, 3):
                 prompt = get_prompt(f"{i}.{j}")
+                gpt3_answers = gpt3_call(prompt)
+                answers += list(gpt3_answers.values())
 
         elif i == 3:
+            for j in range(1, 3):
+                prompt = get_prompt(f"{i}.{j}")
+                gpt3_answers = gpt3_call(prompt)
+                answers += list(gpt3_answers.values())
+        
+        elif i == 7:
             for j in range(1, 3):
                 prompt = get_prompt(f"{i}.{j}")
                 gpt3_answers = gpt3_call(prompt)
