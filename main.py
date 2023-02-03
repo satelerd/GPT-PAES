@@ -11,17 +11,9 @@ import requests
 # --------------------------
 def get_prompt(section):
     """Read the txt file and append it to the prompt"""
-    prompt = """Lo siguiente es la PAES, la prueba mas importante de transicion universitaria en chile. Tu rol como destacado profesor de lengua española y literatura es conseguir la mejor nota en la prueba de competencia lectora.
-
-La prueba conciste en un texto, seguido de 7 preguntas de seleccion multiple. Al final de las preguntas, deberas crear un objeto en formato json con las respuestas correspodientes. (ejemplo: {"0": "a", "1": "b", "2": "c", "3": "d", "4": "e", "5": "f", "6": "g"})
-###
-
-$$$
-
-###
-Las respuestas correctas (en formato json) son las siguientes:
-{"""
-#     :"""
+    
+    with open('./prompt.txt', 'r', encoding='utf-8') as f:
+        prompt = f.read()
 
     with open(f'./PAES/lenguaje/{section}.txt', 'r', encoding='utf-8') as f:
         prompt = prompt.replace('$$$', f.read())
