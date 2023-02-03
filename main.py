@@ -9,10 +9,7 @@ import requests
 
 # Variables
 # --------------------------
-page = 8
-answers = []
 
-openai.api_key = os.getenv("OPENAI_API_KEY")
 
 
 # Functions
@@ -93,42 +90,56 @@ def compare_answers(gpt3_answers):
 # Main
 # --------------------------
 if __name__ == '__main__':
+    # Variables
+    start_time = time.time()
+    page = 8
+    answers = []
+    openai.api_key = os.getenv("OPENAI_API_KEY")
+
+
     print ("Comenzando GPT-PAES Comprension Lectora")
     print()
     
-    for i in range(0, page):
-        print("Respondiendo texto: ", i)
+    # for i in range(0, page):
+    #     print("Respondiendo texto: ", i)
 
-        # getting the prompt
-        if i == 1:
-            for j in range(1, 3):
-                prompt = get_prompt(f"{i}.{j}")
-                gpt3_answers = gpt3_call(prompt)
-                answers += list(gpt3_answers.values())
+    #     # getting the prompt
+    #     if i == 1:
+    #         for j in range(1, 3):
+    #             prompt = get_prompt(f"{i}.{j}")
+    #             gpt3_answers = gpt3_call(prompt)
+    #             answers += list(gpt3_answers.values())
 
-        elif i == 3:
-            for j in range(1, 3):
-                prompt = get_prompt(f"{i}.{j}")
-                gpt3_answers = gpt3_call(prompt)
-                answers += list(gpt3_answers.values())
+    #     elif i == 3:
+    #         for j in range(1, 3):
+    #             prompt = get_prompt(f"{i}.{j}")
+    #             gpt3_answers = gpt3_call(prompt)
+    #             answers += list(gpt3_answers.values())
         
-        elif i == 7:
-            for j in range(1, 3):
-                prompt = get_prompt(f"{i}.{j}")
-                gpt3_answers = gpt3_call(prompt)
-                answers += list(gpt3_answers.values())
+    #     elif i == 7:
+    #         for j in range(1, 3):
+    #             prompt = get_prompt(f"{i}.{j}")
+    #             gpt3_answers = gpt3_call(prompt)
+    #             answers += list(gpt3_answers.values())
 
-        else:
-            prompt = get_prompt(i)
-            gpt3_answers = gpt3_call(prompt)
-            answers += list(gpt3_answers.values())
+    #     else:
+    #         prompt = get_prompt(i)
+    #         gpt3_answers = gpt3_call(prompt)
+    #         answers += list(gpt3_answers.values())
 
-        print(answers)
-        print()
+    #     print(answers)
+    #     print()
 
-        # results = compare_answers(gpt3_answers)
+    #     # results = compare_answers(gpt3_answers)
+    
+    time.sleep(5.3)
+    time_elapsed = time.time() - start_time
+    print()
+    print("Respuestas")
     print("--------------------------------------------------------------")
-    print("Respuestas: ", answers)
+    print(answers)
     print("--------------------------------------------------------------")
     print()
     print("Fin GPT-PAES Comprension Lectora")
+    print("Se demoro", round(time_elapsed,2), "segundos en completar la prueba")
+    print()
