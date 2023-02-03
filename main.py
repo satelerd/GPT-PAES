@@ -34,8 +34,8 @@ Las respuestas correctas (en formato json) son las siguientes:
     with open(f'./PAES/lenguaje/{page}.txt', 'r', encoding='utf-8') as f:
         prompt = prompt.replace('$$$', f.read())
 
-    print("get_prompt ready")
-    print()
+    # print("get_prompt ready")
+    # print()
     return prompt
 
 
@@ -94,34 +94,28 @@ def compare_answers(gpt3_answers):
 # Main
 # --------------------------
 if __name__ == '__main__':
-    total_result = []
+    print ("Comenzando GPT-PAES Comprension Lectora")
+    print()
+    
     for i in range(0, page):
+        print("Respondiendo texto: ", i+1)
+        print()
 
-        # exceptional cases
+        # getting the prompt
         if i == 1:
             continue
             for j in range(1, 3):
                 prompt = get_prompt(f"{i}.{j}")
-                gpt3_answers = gpt3_call(prompt)
-                total_result += gpt3_answers
 
-                # results = compare_answers(gpt3_answers)
         elif i == 3:
             for j in range(1, 3):
                 prompt = get_prompt(f"{i}.{j}")
                 gpt3_answers = gpt3_call(prompt)
-                total_result += gpt3_answers
-
-                # results = compare_answers(gpt3_answers)
+                answers += gpt3_answers
         else:
             prompt = get_prompt(i)
             gpt3_answers = gpt3_call(prompt)
-            total_result += gpt3_answers
+            answers += gpt3_answers
 
-            # results = compare_answers(gpt3_answers)
-
-        # answers.append(gpt3_answers)
-
-        print("Texto: ", i+1)
-        print()
+        # results = compare_answers(gpt3_answers)
 
