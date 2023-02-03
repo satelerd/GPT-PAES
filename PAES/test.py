@@ -1,14 +1,7 @@
-# count how many "C" and how many "I" in the string
 
-def count(string):
-    countC = 0
-    countI = 0
-    for i in string:
-        if i == "C" or i == "c":
-            countC += 1
-        elif i == "I" or i == "i":
-            countI += 1
-    return countC, countI
 
-str =  "cCICCICiiciiciiciiicii"
-print(count(str))
+gpt_answers = ['A', 'B', 'D', 'B', 'B', 'D', 'C', 'C', 'A', 'D', 'D', 'A', 'A', 'A', 'C', 'C', 'C', 'D', 'D', 'A', 'A', 'D', 'B', 'B', 'C', 'C', 'B', 'A', 'B', 'A', 'B', 'D', 'D', 'D', 'C', 'D', 'B', 'D', 'D', 'A', 'B', 'C', 'A', 'B', 'A', 'B', 'D', 'A', 'C', 'D', 'b', 'a', 'c', 'd', 'b', 'd', 'a']
+
+
+real_answers =["A", "B", "C", "B", "D", "A", "C", "B", "D", "D", "A", "B", "A", "C", "D", "C", "D", "B", "A", "A", "D", "B", "C", "D", "C", "C", "A", "B", "A", "B", "D", "D", "D", "C", "D", "B", "A", "D", "A", "C", "C", "A", "B", "A", "B", "D", "A", "C", "D", "A", "C", "B", "A", "A", "C", "A"]
+

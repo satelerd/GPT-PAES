@@ -48,19 +48,18 @@ def gpt3_call(prompt):
         # model="text-ada-001",
         prompt= prompt,
         temperature=0.7,
-        max_tokens=70,
+        max_tokens=100,
         top_p=1,
         frequency_penalty=0,
         presence_penalty=0
     )
     answers += response.choices[0].text
     print(answers)
-    answers = json.loads(answers)
     print()
+    answers = json.loads(answers)
     
 
-    print("gpt3_call ready")
-    print()
+
     return answers
 
 
@@ -99,11 +98,9 @@ if __name__ == '__main__':
     
     for i in range(0, page):
         print("Respondiendo texto: ", i+1)
-        print()
 
         # getting the prompt
         if i == 1:
-            continue
             for j in range(1, 3):
                 prompt = get_prompt(f"{i}.{j}")
 
@@ -111,11 +108,19 @@ if __name__ == '__main__':
             for j in range(1, 3):
                 prompt = get_prompt(f"{i}.{j}")
                 gpt3_answers = gpt3_call(prompt)
-                answers += gpt3_answers
+                answers += list(gpt3_answers.values())
+
         else:
             prompt = get_prompt(i)
             gpt3_answers = gpt3_call(prompt)
-            answers += gpt3_answers
+            answers += list(gpt3_answers.values())
+
+        print(answers)
+        print()
 
         # results = compare_answers(gpt3_answers)
-
+    print("--------------------------------------------------------------")
+    print("Respuestas: ", answers)
+    print("--------------------------------------------------------------")
+    print()
+    print("Fin GPT-PAES Comprension Lectora")
