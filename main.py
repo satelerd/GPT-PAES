@@ -5,6 +5,7 @@ import time
 import json
 import openai
 import requests
+import pandas as pd
 
 
 # Functions
@@ -52,19 +53,29 @@ def compare_answers(gpt3_answers):
     correct = 0
     incorrect = 0
     with open('./PAES/lenguaje/clavijero.txt', 'r', encoding='utf-8') as f:
-        # get the correct answer and make it a list of strings separated by \n
         correct_answer = f.read().splitlines()
 
     for i in range(0, len(gpt3_answers)):
-        print(i, " GPT-3 answer: ", gpt3_answers[str(i)])
-        print(i, " Correct answer: ", correct_answer[i+23])
-        print()
-        if gpt3_answers[str(i)] == correct_answer[i+23]:
+        if gpt3_answers[str(i)] == correct_answer[i]:
             correct += 1 
             gpt3_answers[str(i)] = gpt3_answers[str(i)] + " (correct)"
         else:
             incorrect += 1
             gpt3_answers[str(i)] = gpt3_answers[str(i)] + " (incorrect)"
+
+    # open the xlsx file to post the answers
+    df = pd.read_excel('./Resultados/comprension_lectora.xlsx')
+    row_finded = False
+    while not row_finded:
+        # search for the first empty row starting from the E column and the 3nd row
+        for i in range(2, 100):
+            if df.iloc[i, 5] == "":
+                # write the answers in the xlsx file
+                for j in range(0, len(gpt3_answers)):
+                    df.iloc[i, j+5] = gpt3_answers[str(j)]
+                df.to_excel('./Resultados/comprension_lectora.xlsx', index=False)
+                row_finded = True
+                break
 
     print()
     print("compare_answers ready")
