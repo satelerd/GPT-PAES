@@ -65,18 +65,16 @@ def compare_answers(gpt3_answers):
     print("Respuestas correctas: ", correct)
     print("Respuestas incorrect: ", incorrect)
 
-    # create a xlsx file to post the answers
-    data = list(zip(correct_answer, gpt3_answers))
-    df = pd.DataFrame(data, columns=["Clavijero", "GPT-PAES"])
+    # open the xlsx file to post the answers
+    df = pd.read_excel("./Resultados/comprension_lectora.xlsx")
     print(final_answers)
     for i in range(len(final_answers)):
-        x_pos = 1
-        y_pos = 1
-        if final_answers[i][2]:
-            df.iloc[y_pos, x_pos] = final_answers[i][1]
+        # if the answer is correct, write the answer in the xlsx file with a green background
+        if final_answers[i][1]:
+            df.iloc[i, 2] = final_answers[i][0]
 
         else:
-            df.iloc[y_pos, x_pos] = final_answers[i][1]
+            df.iloc[i, 2] = final_answers[i][0]
     # now change the color of all the cells in the column depending on the value. if the value is true, the cell will be green, if not, the cell will be red
     df.style.applymap(
         lambda x: "background-color: green"
@@ -86,10 +84,7 @@ def compare_answers(gpt3_answers):
         else "",
         subset=pd.IndexSlice[:, ["Respuesta correcta"]],
     )
-    # save the file with the name: ans_cl_dia/hora:minuto
-    df.to_excel(
-        "./Resultados/ans_cl_{}.xlsx".format(time.strftime("%H_%M")), index=False
-    )
+    df.to_excel("./Resultados/comprension_lectora.xlsx", index=False)
 
     # row_finded = False
     # while not row_finded:
