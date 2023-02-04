@@ -7,13 +7,16 @@ import openai
 import requests
 import pandas as pd
 
+# Changeable variables
+prompt_version = "1"
+
 
 # Functions
 # --------------------------
 def create_prompt(section):
     """Read the txt file and append it to the prompt"""
 
-    with open("./prompt.txt", "r", encoding="utf-8") as f:
+    with open(f"./Prompts/V{prompt_version}/.txt", "r", encoding="utf-8") as f:
         prompt = f.read()
 
     with open(f"./PAES/lenguaje/{section}.txt", "r", encoding="utf-8") as f:
@@ -51,10 +54,11 @@ def dir_manipulation():
     current_dir = os.getcwd()
     current_date = time.strftime("%d_%m_%Y")
     os.chdir(current_dir, "/Resultados")
-    # loop through the files in the directory
-    for file in os.listdir():
-        continue
-    return
+    len_dir = len(os.listdir()) - 1  # -1 to ignore the test file
+    xlsx_path = f"./Resultados/V{prompt_version}_{len_dir}.xlsx"
+
+    os.chdir(current_dir)
+    return xlsx_path
 
 
 def compare_answers(gpt3_answers):
@@ -98,9 +102,7 @@ def compare_answers(gpt3_answers):
         subset=pd.IndexSlice[:, ["Respuesta correcta"]],
     )
     # save the file with the name: ans_cl_dia/hora:minuto
-    df.to_excel(
-        "./Resultados/ans_cl_{}.xlsx".format(time.strftime("%H_%M")), index=False
-    )
+    df.to_excel(dir_manipulation(), index=False)
 
     # row_finded = False
     # while not row_finded:
