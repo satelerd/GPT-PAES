@@ -10,7 +10,7 @@ import pandas as pd
 
 # Functions
 # --------------------------
-def get_prompt(section):
+def create_prompt(section):
     """Read the txt file and append it to the prompt"""
     
     with open('./prompt.txt', 'r', encoding='utf-8') as f:
@@ -19,7 +19,7 @@ def get_prompt(section):
     with open(f'./PAES/lenguaje/{section}.txt', 'r', encoding='utf-8') as f:
         prompt = prompt.replace('$$$', f.read())
 
-    # print("get_prompt ready")
+    # print("create_prompt ready")
     # print()
     return prompt
 
@@ -77,10 +77,9 @@ def compare_answers(gpt3_answers):
                 row_finded = True
                 break
 
-    print()
-    print("compare_answers ready")
-    print("Correct: ", correct)
-    print("Incorrect: ", incorrect)
+    print("Respuestas correctas: ", correct)
+    print("Respuestas incorrect: ", incorrect)
+    print("Excel actualizado con las respuestas")
     print()
     return
 
@@ -101,37 +100,22 @@ if __name__ == '__main__':
     for i in range(0, sections):
         print("Respondiendo texto: ", i)
 
-        # the function calls depend on the sections number
-        if i == 1:
+        txt_file_name = str(i)
+        if i == 1 or i == 3 or i == 7:      # special naming cases
             for j in range(1, 3):
-                prompt = get_prompt(f"{i}.{j}")
-                gpt3_answers = gpt3_call(prompt)
-                answers += list(gpt3_answers.values())
-
-        elif i == 3:
-            for j in range(1, 3):
-                prompt = get_prompt(f"{i}.{j}")
-                gpt3_answers = gpt3_call(prompt)
-                answers += list(gpt3_answers.values())
+                txt_file_name = f"{i}.{j}"
         
-        elif i == 7:
-            for j in range(1, 3):
-                prompt = get_prompt(f"{i}.{j}")
-                gpt3_answers = gpt3_call(prompt)
-                answers += list(gpt3_answers.values())
+        prompt = create_prompt(txt_file_name)
+        gpt3_answers = gpt3_call(prompt)
+        answers += list(gpt3_answers.values())
 
-        else:
-            prompt = get_prompt(i)
-            gpt3_answers = gpt3_call(prompt)
-            answers += list(gpt3_answers.values())
+    compare_answers(answers)
 
-        print(answers)
-        print()
 
-        # results = compare_answers(gpt3_answers)
-    
     time.sleep(5.3)
     time_elapsed = time.time() - start_time
+
+
     print()
     print("Respuestas")
     print("--------------------------------------------------------------")
