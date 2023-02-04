@@ -46,6 +46,17 @@ def gpt3_call(prompt):
     return answers
 
 
+def dir_manipulation():
+    """Create and manage the directories to store all the results"""
+    current_dir = os.getcwd()
+    current_date = time.strftime("%d_%m_%Y")
+    os.chdir(current_dir, "/Resultados")
+    # loop through the files in the directory
+    for file in os.listdir():
+        continue
+    return
+
+
 def compare_answers(gpt3_answers):
     """Compare all the answers given by the GPT-3 model with the correct answers"""
     final_answers = []
