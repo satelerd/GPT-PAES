@@ -8,7 +8,7 @@ import requests
 import pandas as pd
 
 # Changeable variables
-prompt_version = "1"
+prompt_version = "2"
 
 
 # Functions
@@ -53,9 +53,21 @@ def dir_manipulation():
     """Create and manage the directories to store all the results"""
     current_dir = os.getcwd()
     current_date = time.strftime("%d_%m_%Y")
-    os.chdir(current_dir, "/Resultados")
+    os.chdir(current_dir + "/Resultados")
     len_dir = len(os.listdir()) - 1  # -1 to ignore the test file
-    xlsx_path = f"./Resultados/V{prompt_version}_{len_dir}.xlsx"
+    xlsx_name = f"V{prompt_version}_{len_dir+1}.xlsx"
+
+    if (
+        xlsx_name in os.listdir()
+    ):  # muy dudosa ejecucion de codigo, pero creo que funcionara (ojala algun dia pueda mejorar esto :v (copilot me recomendo poner :v jasjaj))
+        repeted = True
+        while repeted:
+            len_dir += 1
+            xlsx_name = f"V{prompt_version}_{len_dir+1}.xlsx"
+            if xlsx_name not in os.listdir():
+                repeted = False
+    xlsx_path = "./Resultados/" + xlsx_name
+    print(current_dir)
 
     os.chdir(current_dir)
     return xlsx_path
