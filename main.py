@@ -8,7 +8,7 @@ import requests
 import pandas as pd
 
 # Changeable variables
-prompt_version = "2"
+prompt_version = "1"
 
 
 # Functions
@@ -16,7 +16,7 @@ prompt_version = "2"
 def create_prompt(section):
     """Read the txt file and append it to the prompt"""
 
-    with open(f"./Prompts/V{prompt_version}/.txt", "r", encoding="utf-8") as f:
+    with open(f"./Prompts/V{prompt_version}.txt", "r", encoding="utf-8") as f:
         prompt = f.read()
 
     with open(f"./PAES/lenguaje/{section}.txt", "r", encoding="utf-8") as f:
@@ -145,90 +145,20 @@ if __name__ == "__main__":
     print("Comenzando GPT-PAES Comprension Lectora")
     print()
 
-    # for i in range(0, sections):
+    for i in range(0, sections):
 
-    #     if i == 1 or i == 3 or i == 7:  # special naming cases
-    #         for j in range(1, 3):
-    #             print("Respondiendo texto: ", i, ".", j)
+        if i == 1 or i == 3 or i == 7:  # special naming cases
+            for j in range(1, 3):
+                print("Respondiendo texto: ", i, ".", j)
 
-    #             prompt = create_prompt(f"{i}.{j}")
-    #             gpt3_answers = gpt3_call(prompt)
-    #             answers += list(gpt3_answers.values())
-    #     else:
-    #         print("Respondiendo texto: ", i)
-    #         prompt = create_prompt(str(i))
-    #         gpt3_answers = gpt3_call(prompt)
-    #         answers += list(gpt3_answers.values())
-    answers = [
-        "A",
-        "B",
-        "D",
-        "B",
-        "D",
-        "D",
-        "C",
-        "D",
-        "C",
-        "D",
-        "B",
-        "B",
-        "A",
-        "C",
-        "D",
-        "C",
-        "A",
-        "D",
-        "D",
-        "A",
-        "A",
-        "A",
-        "C",
-        "D",
-        "C",
-        "D",
-        "D",
-        "B",
-        "A",
-        "D",
-        "D",
-        "B",
-        "C",
-        "C",
-        "B",
-        "A",
-        "B",
-        "A",
-        "B",
-        "D",
-        "D",
-        "D",
-        "C",
-        "D",
-        "B",
-        "D",
-        "D",
-        "A",
-        "B",
-        "C",
-        "A",
-        "B",
-        "A",
-        "B",
-        "D",
-        "A",
-        "C",
-        "D",
-        "A",
-        "C",
-        "D",
-        "A",
-        "A",
-        "C",
-        "B",
-        "A",
-        "B",
-        "D",
-    ]
+                prompt = create_prompt(f"{i}.{j}")
+                gpt3_answers = gpt3_call(prompt)
+                answers += list(gpt3_answers.values())
+        else:
+            print("Respondiendo texto: ", i)
+            prompt = create_prompt(str(i))
+            gpt3_answers = gpt3_call(prompt)
+            answers += list(gpt3_answers.values())
 
     print()
     print("Respuestas")
