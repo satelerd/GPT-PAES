@@ -7,10 +7,11 @@ import openai
 import requests
 import pandas as pd
 
+
 # Changeable variables
-prompt_version = "1"
-sections = 8
-sections = 2
+# --------------------------
+prompt_version = "1"  # check the number txt file in the Prompts folder
+sections = 8  # between 2 and 8
 
 
 # Functions
@@ -31,7 +32,7 @@ def gpt3_call(prompt):
 
     response = openai.Completion.create(
         model="text-davinci-003",
-        # model="text-ada-001",
+        # model="text-ada-001", # for testing
         prompt=prompt,
         temperature=0.7,
         max_tokens=100,
@@ -55,7 +56,7 @@ def dir_manipulation():
     len_dir = len(os.listdir()) - 1  # -1 to ignore the test folder
     xlsx_name = f"V{prompt_version}_{len_dir+1}.xlsx"
 
-    # muy dudosa ejecucion de codigo, pero creo que funcionara (ojala algun dia pueda mejorar esto :v (jasjaj copilot me recomendo poner ":v"))
+    # muy dudosa ejecucion de codigo, pero funciona (ojala algun dia pueda mejorar esto :v (jasjaj copilot me recomendo poner ":v"))
     if xlsx_name in os.listdir():
         repeted = True
         while repeted:
@@ -78,7 +79,6 @@ def compare_answers(gpt3_answers):
     final_answers = []
     correct = 0
     incorrect = 0
-    # use the len of the shortest between the gpt3_answers and the correct_answer
     for i in range(min(len(gpt3_answers), len(correct_answer))):
         if gpt3_answers[i] == correct_answer[i]:
             final_answers.append([i + 1, gpt3_answers[i], True])
@@ -144,13 +144,7 @@ if __name__ == "__main__":
             prompt = create_prompt(str(i))
             gpt3_answers = gpt3_call(prompt)
             answers += list(gpt3_answers.values())
-
-    try:
-        compare_answers(answers)
-    except:  # save the answers on the console
-        print("Error al comparar las respuestas")
-        print("Respuestas: ", answers)
-        print()
+    compare_answers(answers)
 
     time_elapsed = time.time() - start_time
     print("Fin GPT-PAES Comprension Lectora")
