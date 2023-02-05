@@ -1,39 +1,26 @@
 Nutrición (Preguntas 1 a 7)
 Políticas Públicas en Alimentación y Nutrición
 En Chile, las políticas en alimentación y nutrición están enfocadas a la promoción de la alimentación saludable en el contexto de una vida sana, y a la prevención de la obesidad y otras enfermedades no transmisibles vinculadas a la dieta. Lo anterior en respuesta a la alta prevalencia de malnutrición por exceso en nuestra población y a que esta enfermedad se asocia a las principales causas de morbilidad, mortalidad y discapacidad precoz, tales como diabetes, hipertensión, infartos cardíacos, ataques cerebrales y algunos tipos de cáncer. La malnutrición por exceso afecta a hombres y mujeres, pero con mayor intensidad a las mujeres; afecta también a los niños y niñas desde muy pequeños incidiendo en su crecimiento y desarrollo; y afecta a todos los grupos socioeconómicos, pero principalmente a los grupos socioeconómicos más vulnerables. Esta realidad hace de la obesidad el problema de salud pública más importante en la actualidad por lo que constituye una responsabilidad ineludible del Estado.
-
 Desde el Ministerio de Salud, el enfoque que se plantea para abordar la prevención y control de la malnutrición por exceso considera los determinantes sociales de la salud, apuntando a las causas que influyen en las conductas de las personas y, en ese sentido, es por lo tanto un enfoque intersectorial, mediante políticas estructurales basadas en la evidencia, que contribuyen a modificar los entornos que rodean a las personas y que inciden en la toma de decisiones, tales como, mejorar la oferta y disponibilidad de alimentos saludables, aumentar la información respecto de los alimentos mediante un etiquetado nutricional claro y fácil de comprender, el uso regulado de mensajes nutricionales y el control de la publicidad asociada a los alimentos, especialmente aquella dirigida a la población infantil. Así también, este enfoque considera políticas individuales tales como la educación en salud y nutrición, la consejería en alimentación y programas dirigidos a tratar a las personas con obesidad y sobrepeso.
-
 Entre las políticas y estrategias más destacadas, se encuentran:
-
 LEYES, NORMAS Y REGULACIONES:
 Tales como la Ley 20.606 sobre la Composición nutricional de los alimentos y su publicidad, que obliga a los alimentos que sobrepasen los límites determinados de energía, azúcares, sodio y grasas saturadas, a rotular “ALTO EN”, que prohíbe la venta de estos alimentos en establecimientos educacionales de pre básica, básica y media y que prohíbe la publicidad de estos alimentos dirigida a menores de 14 años. En este ámbito, existen además normas y guías para la evaluación nutricional, de alimentación y de manejo de malnutrición.
-
 ACUERDOS VOLUNTARIOS DE REDUCCIÓN DE NUTRIENTES CRÍTICOS:
 En este ámbito, el ejemplo más exitoso es el acuerdo con FECHIPAN y ASACH para reducir el contenido de sodio en el pan.
-
 PROGRAMAS DE VIGILANCIA Y FISCALIZACIÓN DE ALIMENTOS:
 Que incluyen aspectos de inocuidad, etiquetado y composición nutricional de los alimentos con foco en nutrientes críticos y de fortificación.
-
 PROGRAMA DE INTERVENCIÓN EN OBESIDAD:
 Programas integrales de atención de personas con malnutrición por exceso en atención primaria de salud “Programa Vida Sana” para menores desde los 2 años de edad, escolares y adolescentes y adultos hasta los 60 años.
-
 PROGRAMA NACIONAL DE ALIMENTACIÓN COMPLEMENTARIA:
-PNAC y PACAM, que contribuyen a la seguridad alimentaria y nutricional de los grupos más vulnerables de nuestro país, entregando gratuitamente alimentos de alta calidad nutricional y alta especificidad, vinculada a otras intervenciones de salud como el control sano y las
-vacunas.
-
+PNAC y PACAM, que contribuyen a la seguridad alimentaria y nutricional de los grupos más vulnerables de nuestro país, entregando gratuitamente alimentos de alta calidad nutricional y alta especificidad, vinculada a otras intervenciones de salud como el control sano y las vacunas
 PLANES DE PROMOCIÓN DE SALUD:
 Trabajo intersectorial coordinado desde el nivel central, y que se expresa a nivel regional y comunal en distintas intervenciones tales como las comunas saludables, las escuelas y universidades saludables y los lugares de trabajo promotores de la salud.
-
 GUÍAS ALIMENTARIAS PARA LA POBLACIÓN:
 Conjunto de mensajes educativos breves, claros y concretos, validados en nuestra población, dirigidos a personas sanas mayores de dos años, con el objetivo de promover la alimentación saludable y reducir el riesgo de enfermedades nutricionales. Estos mensajes se traducen además en un símbolo que la población reconoce como orientador del consumo saludable y de una vida sana.
-
 CAMPAÑAS DE MEDIOS MASIVOS:
 Para apoyar las estrategias en curso y promover el desarrollo de entornos alimentarios saludables que contribuyan a instalar hábitos de vida sana.
-
 División de Políticas Públicas. (s.f.). Nutrición. Políticas Públicas en Alimentación y Nutrición. Ministerio de Salud de Chile. https://dipol.minsal.cl/departamentos-2/nutricion-y-alimentos/nutricion/
-
-----
+------------
 
 1. ¿Qué se afirma en el texto sobre la hipertensión?
 A) Que es una consecuencia de las enfermedades no transmisibles asociadas a la dieta.
