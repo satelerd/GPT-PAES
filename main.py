@@ -9,6 +9,8 @@ import pandas as pd
 
 # Changeable variables
 prompt_version = "1"
+sections = 8
+sections = 2
 
 
 # Functions
@@ -18,18 +20,14 @@ def create_prompt(section):
 
     with open(f"./Prompts/V{prompt_version}.txt", "r", encoding="utf-8") as f:
         prompt = f.read()
-
     with open(f"./PAES/lenguaje/{section}.txt", "r", encoding="utf-8") as f:
         prompt = prompt.replace("$$$", f.read())
 
-    # print("create_prompt ready")
-    # print()
     return prompt
 
 
 def gpt3_call(prompt):
     """API call to OpenAI GPT-3"""
-    answers = "{"
 
     response = openai.Completion.create(
         model="text-davinci-003",
@@ -41,25 +39,24 @@ def gpt3_call(prompt):
         frequency_penalty=0,
         presence_penalty=0,
     )
-    answers += response.choices[0].text
+
+    answers = "{" + response.choices[0].text
+    answers = json.loads(answers)
     print(answers)
     print()
-    answers = json.loads(answers)
 
     return answers
 
 
 def dir_manipulation():
     """Create and manage the directories to store all the results"""
-    current_dir = os.getcwd()
-    current_date = time.strftime("%d_%m_%Y")
-    os.chdir(current_dir + "/Resultados")
-    len_dir = len(os.listdir()) - 1  # -1 to ignore the test file
+
+    os.chdir("./Resultados")
+    len_dir = len(os.listdir()) - 1  # -1 to ignore the test folder
     xlsx_name = f"V{prompt_version}_{len_dir+1}.xlsx"
 
-    if (
-        xlsx_name in os.listdir()
-    ):  # muy dudosa ejecucion de codigo, pero creo que funcionara (ojala algun dia pueda mejorar esto :v (copilot me recomendo poner :v jasjaj))
+    # muy dudosa ejecucion de codigo, pero creo que funcionara (ojala algun dia pueda mejorar esto :v (jasjaj copilot me recomendo poner ":v"))
+    if xlsx_name in os.listdir():
         repeted = True
         while repeted:
             len_dir += 1
@@ -67,35 +64,40 @@ def dir_manipulation():
             if xlsx_name not in os.listdir():
                 repeted = False
     xlsx_path = "./Resultados/" + xlsx_name
-    print(current_dir)
+    os.chdir("..")
 
-    os.chdir(current_dir)
     return xlsx_path
 
 
 def compare_answers(gpt3_answers):
-    """Compare all the answers given by the GPT-3 model with the correct answers"""
-    final_answers = []
-    correct = 0
-    incorrect = 0
+    """Compare all the answers given by the GPT-3 model with the correct answers and then create a xlsx file with the results"""
 
     with open("./PAES/lenguaje/clavijero.txt", "r", encoding="utf-8") as f:
         correct_answer = f.read().splitlines()
 
-    for i in range(0, len(correct_answer)):
+    final_answers = []
+    correct = 0
+    incorrect = 0
+    for i in range(0, len(correct_answer)):  # compare the answers
         if gpt3_answers[i] == correct_answer[i]:
             final_answers.append([i + 1, gpt3_answers[i], True])
             correct += 1
         else:
             final_answers.append([i + 1, gpt3_answers[i], False])
             incorrect += 1
-    print("Respuestas correctas: ", correct)
-    print("Respuestas incorrect: ", incorrect)
+
+    print()
+    print("Respuestas")
+    print("--------------------------------------------------------------")
+    print(gpt3_answers)
+    print("--------------------------------------------------------------")
+    print("✅ ", correct)
+    print("❌ ", incorrect)
+    print()
 
     # create a xlsx file to post the answers
     data = list(zip(correct_answer, gpt3_answers))
     df = pd.DataFrame(data, columns=["Clavijero", "GPT-PAES"])
-    print(final_answers)
     for i in range(len(final_answers)):
         x_pos = 1
         y_pos = 1
@@ -104,29 +106,10 @@ def compare_answers(gpt3_answers):
 
         else:
             df.iloc[y_pos, x_pos] = final_answers[i][1]
-    # now change the color of all the cells in the column depending on the value. if the value is true, the cell will be green, if not, the cell will be red
-    df.style.applymap(
-        lambda x: "background-color: green"
-        if x == True
-        else "background-color: red"
-        if x == False
-        else "",
-        subset=pd.IndexSlice[:, ["Respuesta correcta"]],
-    )
-    # save the file with the name: ans_cl_dia/hora:minuto
-    df.to_excel(dir_manipulation(), index=False)
 
-    # row_finded = False
-    # while not row_finded:
-    #     # search for the first empty row starting from the E column and the 3nd row
-    #     for i in range(2, 100):
-    #         if df.iloc[i, 5].isnull():
-    #             # write the answers in the xlsx file
-    #             for j in range(0, len(gpt3_answers)):
-    #                 df.iloc[i, j + 5] =
-    #             df.to_excel("./Resultados/comprension_lectora.xlsx", index=False)
-    #             row_finded = True
-    #             break
+    # it could be awesome to change the color of the cell if the answer is correct or incorrect, or at least a cell with the number of correct and incorrect answers
+
+    df.to_excel(dir_manipulation(), index=False)
 
     print("Excel actualizado con las respuestas")
     print()
@@ -138,7 +121,6 @@ def compare_answers(gpt3_answers):
 if __name__ == "__main__":
     # Variables
     start_time = time.time()
-    sections = 8
     answers = []
     openai.api_key = os.getenv("OPENAI_API_KEY")
 
@@ -154,21 +136,22 @@ if __name__ == "__main__":
                 prompt = create_prompt(f"{i}.{j}")
                 gpt3_answers = gpt3_call(prompt)
                 answers += list(gpt3_answers.values())
+
         else:
             print("Respondiendo texto: ", i)
+
             prompt = create_prompt(str(i))
             gpt3_answers = gpt3_call(prompt)
             answers += list(gpt3_answers.values())
 
-    print()
-    print("Respuestas")
-    print("--------------------------------------------------------------")
-    print(answers)
-    print("--------------------------------------------------------------")
-    print()
-    compare_answers(answers)
+    try:
+        compare_answers(answers)
+    except:  # save the answers on the console
+        print("Error al comparar las respuestas")
+        print("Respuestas: ", answers)
+        print()
 
-    print("Fin GPT-PAES Comprension Lectora")
     time_elapsed = time.time() - start_time
+    print("Fin GPT-PAES Comprension Lectora")
     print("Se demoro", round(time_elapsed, 2), "segundos en completar la prueba")
     print()
