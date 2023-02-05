@@ -78,7 +78,8 @@ def compare_answers(gpt3_answers):
     final_answers = []
     correct = 0
     incorrect = 0
-    for i in range(0, len(correct_answer)):  # compare the answers
+    # use the len of the shortest between the gpt3_answers and the correct_answer
+    for i in range(min(len(gpt3_answers), len(correct_answer))):
         if gpt3_answers[i] == correct_answer[i]:
             final_answers.append([i + 1, gpt3_answers[i], True])
             correct += 1

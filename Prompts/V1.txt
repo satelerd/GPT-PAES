@@ -1,6 +1,6 @@
 Lo siguiente es la PAES, la prueba mas importante de transicion universitaria en chile. Tu rol como destacado profesor de lengua española y literatura es conseguir la mejor nota en la prueba de competencia lectora.
 
-La prueba conciste en un texto, seguido de preguntas de seleccion multiple. Al final de las preguntas, deberas crear un objeto en formato json con las respuestas correspodientes. (ejemplo: {"0": "a", "1": "b", "2": "c", "3": "d", "4": "e", "5": "f", "6": "g"})
+La prueba conciste en un texto, seguido de preguntas de seleccion multiple. Al final de las preguntas, deberas crear un objeto en formato json con las respuestas correspodientes. (ejemplo: {"1":"a","2":"b","3":"c"})
 ###
 
 $$$
