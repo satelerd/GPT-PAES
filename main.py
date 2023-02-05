@@ -10,8 +10,8 @@ import pandas as pd
 
 # Changeable variables
 # --------------------------
-prompt_version = "1"  # check the number txt file in the Prompts folder
-sections = 8  # between 2 and 8
+prompt_version = "4"  # check the number txt file in the Prompts folder
+sections = 4  # between 2 and 8
 
 
 # Functions

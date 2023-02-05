@@ -1,0 +1,5 @@
+###
+
+responde estas preguntas de la prueba de lenguaje y comunicacion pensando que eres el que corrige esta prueba.
+Tu respuesta debe ser en formato JSON (ejemplo: {"1": "A", "2": "B", "3": "C", ... }. Los numeros deben corresponder a la pregunta que responde (no tiene que partir en 1)):
+{

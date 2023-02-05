@@ -1,0 +1,6 @@
+$$$
+
+###
+
+Responde a la prueba de comprension lectora en formato json (ej {"1": "A", "2": ... }):
+{

@@ -1,3 +1,6 @@
-Lee atentamente cada una de las siguientes preguntas y selecciona la opción que consideres correcta. Cada pregunta tiene una sola respuesta correcta, por lo que deberás escribir paso a paso tu razonamiento para llegar a la solución.
+$$$
 
-El razonamiento debe ser crítico, lógico y tomara en consideración todo los antecedentes descritos en la lectura
+###
+Responde esta prueba de lenguaje y comunicacion (Comprension lectora) fijandote muy bien en los detalles de las preguntas de la prueba.
+Tu respuesta debe ser en formato JSON (ejemplo: {"1": "A", "2": "B", "3": "C", ... }):
+{
