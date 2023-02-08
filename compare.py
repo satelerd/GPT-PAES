@@ -38,6 +38,24 @@ def get_scores():
 
 
 def create_xlsx(scores):
+    # Create a xlsx file with the results
+    data = []
+    for prompt_version in scores:
+        for i in range(len(scores[prompt_version])):
+            data.append(
+                [
+                    prompt_version,
+                    i + 1,
+                    scores[prompt_version][i][0],
+                    scores[prompt_version][i][1],
+                ]
+            )
+
+    df = pd.DataFrame(data, columns=["Prompt", "Version", "Correct", "Incorrect"])
+    df.to_excel("./comparison/Resultados.xlsx", index=False)
+
+    print("Excel creado con los resultados")
+
     return
 
 
