@@ -33,6 +33,8 @@ def get_scores():
         scores[prompt_version].append([correct, incorrect])
 
         cont += 1
+
+    os.chdir("..")
     print(scores)
     return scores
 
@@ -40,19 +42,26 @@ def get_scores():
 def create_xlsx(scores):
     # Create a xlsx file with the results
     data = []
+
+    with open("./PAES/lenguaje/puntajes.txt", "r", encoding="utf-8") as f:
+        puntajes = f.read().splitlines()
+
     for prompt_version in scores:
         for i in range(len(scores[prompt_version])):
             data.append(
                 [
                     prompt_version,
-                    i + 1,
+                    puntajes[scores[prompt_version][i][0]],
                     scores[prompt_version][i][0],
                     scores[prompt_version][i][1],
+                    scores[prompt_version][i][0] + scores[prompt_version][i][1],
                 ]
             )
 
-    df = pd.DataFrame(data, columns=["Prompt", "Version", "Correct", "Incorrect"])
-    df.to_excel("./comparison/Resultados.xlsx", index=False)
+    df = pd.DataFrame(
+        data, columns=["Prompt", "Puntaje", "Correct", "Incorrecto", "N° de respuestas"]
+    )
+    df.to_excel("./Resultados/comparison/compare.xlsx", index=False)
 
     print("Excel creado con los resultados")
 
