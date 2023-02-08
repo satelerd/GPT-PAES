@@ -39,7 +39,7 @@ def get_scores():
     return scores
 
 
-def create_xlsx(scores):
+def compare_xlsx(scores):
     # Create a xlsx file with the results
     data = []
 
@@ -69,13 +69,13 @@ def create_xlsx(scores):
             "Promedio de respuestas correctas",
         ],
     )
-    df.to_excel("./Resultados/comparison/compare.xlsx", index=False)
+    df.to_excel("./Resultados/Comparacion/total.xlsx", index=False)
 
     print("Excel creado con los resultados")
-
+    print()
     return
 
 
 if __name__ == "__main__":
     scores = get_scores()
-    create_xlsx(scores)
+    compare_xlsx(scores)

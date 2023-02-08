@@ -6,12 +6,13 @@ import json
 import openai
 import requests
 import pandas as pd
+from compare import get_scores, compare_xlsx
 
 
 # Changeable variables
 # --------------------------
-prompt_version = "4"  # check the number txt file in the Prompts folder
-sections = 2  # between 2 and 8
+prompt_version = "1"  # check the number txt file in the Prompts folder
+sections = 1  # between 1 and 8
 
 
 # Functions
@@ -70,7 +71,7 @@ def dir_manipulation():
     return xlsx_path
 
 
-def compare_answers(gpt3_answers):
+def upload_answers(gpt3_answers):
     """Compare all the answers given by the GPT-3 model with the correct answers and then create a xlsx file with the results"""
 
     with open("./PAES/lenguaje/clavijero.txt", "r", encoding="utf-8") as f:
@@ -144,7 +145,11 @@ if __name__ == "__main__":
             prompt = create_prompt(str(i))
             gpt3_answers = gpt3_call(prompt)
             answers += list(gpt3_answers.values())
-    compare_answers(answers)
+    upload_answers(answers)
+
+    scores = get_scores()
+    compare_xlsx(scores)
+    print("Estadisticas actualizadas")
 
     time_elapsed = time.time() - start_time
     print("Fin GPT-PAES Comprension Lectora")
