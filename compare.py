@@ -54,12 +54,20 @@ def create_xlsx(scores):
                     puntajes[scores[prompt_version][i][0]],
                     scores[prompt_version][i][0],
                     scores[prompt_version][i][1],
-                    scores[prompt_version][i][0] + scores[prompt_version][i][1],
+                    scores[prompt_version][i][0]
+                    / (scores[prompt_version][i][0] + scores[prompt_version][i][1]),
                 ]
             )
 
     df = pd.DataFrame(
-        data, columns=["Prompt", "Puntaje", "Correct", "Incorrecto", "N° de respuestas"]
+        data,
+        columns=[
+            "Prompt",
+            "Puntaje",
+            "Correct",
+            "Incorrecto",
+            "Promedio de respuestas correctas",
+        ],
     )
     df.to_excel("./Resultados/comparison/compare.xlsx", index=False)
 
