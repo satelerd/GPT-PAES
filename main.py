@@ -11,7 +11,7 @@ import pandas as pd
 # Changeable variables
 # --------------------------
 prompt_version = "4"  # check the number txt file in the Prompts folder
-sections = 4  # between 2 and 8
+sections = 2  # between 2 and 8
 
 
 # Functions
