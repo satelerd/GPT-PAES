@@ -19,7 +19,15 @@ Podemos encontrar la PAES en el [Demre](https://demre.cl/publicaciones/2023/prue
 
 #### Paso 2: Diseño de Prompt
 Primero debemos obtener una API Key (en [OpenAI](https://beta.openai.com/)).
-El prompt es el texto de entrada que le pasaremos a GPT-3. Dependiendo de este texto es que la IA podra generar respuestas coherentes y con el formato correcto.
+El prompt es el texto de entrada que le pasaremos a GPT-3. Dependiendo de este texto es que la IA podra generar respuestas coherentes y con el formato correcto. En la carpeta `prompts` se encuentran las distintas versiones de prompts que usamos para generar las respuestas de la PAES.
 
 ### Paso 3: Logica de programacion
-Usaremos python para ciclar por cada set de preguntas y hacer un request a GPT-3 para que nos responda con las respuestas.
+Usaremos python para ciclar por cada set de preguntas y hacer un request a GPT-3 para que nos responda con las respuestas y las guardaremos en un excel.
+
+## ¿Como usarlo?
+Es muy simple, simplemente hay que clonar el repositorio y ejecutar el archivo `main.py`.
+Puedes cambiar las variables (desde la linea 12 a las 15), donde puedes seleccionar el prompt a usar y el numero de sets de preguntas a usar (en el caso de comprension lectora, 8 set contienen toda la prueba).
+
+## Para futuras versiones
+- Actualizarlo a GPT-4!
+- Siempre podemos mejorar los prompt... sustancialmente. (Chain of thought)
