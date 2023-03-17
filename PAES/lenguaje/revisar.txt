@@ -1,0 +1,6 @@
+3 (imagen)
+8 (Texto)
+12 (Imagen (buena))
+14 (IA)
+17 (IA)
+21 (IA)
