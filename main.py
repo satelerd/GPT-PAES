@@ -18,23 +18,27 @@ sections = 1  # between 1 and 8
 # Functions
 # --------------------------
 def create_prompt(section):
-    """Read the txt file and append it to the prompt"""
+    """Read the txt file and append it to the messages_history list"""
 
     with open(f"./Prompts/V{prompt_version}.txt", "r", encoding="utf-8") as f:
-        prompt = f.read()
+        system = f.read()
     with open(f"./PAES/lenguaje/{section}.txt", "r", encoding="utf-8") as f:
-        prompt = prompt.replace("$$$", f.read())
+        paes_fragment = system.replace("$$$", f.read())
 
-    return prompt
+    messages_history = [
+        {"role": "system", "text": system},
+        {"role": "user", "text": paes_fragment}
+    ]
+    return messages_history
 
 
-def gpt3_call(prompt):
+def gpt3_call(messages_history):
     """API call to OpenAI GPT-3"""
 
     response = openai.Completion.create(
-        model="text-davinci-003",
+        model="gpt-4",
         # model="text-ada-001", # for testing
-        prompt=prompt,
+        messages=messages_history,
         temperature=0.7,
         max_tokens=100,
         top_p=1,
@@ -135,15 +139,15 @@ if __name__ == "__main__":
             for j in range(1, 3):
                 print("Respondiendo texto: ", i, ".", j)
 
-                prompt = create_prompt(f"{i}.{j}")
-                gpt3_answers = gpt3_call(prompt)
+                messages_history = create_prompt(f"{i}.{j}")
+                gpt3_answers = gpt3_call(messages_history)
                 answers += list(gpt3_answers.values())
 
         else:
             print("Respondiendo texto: ", i)
 
-            prompt = create_prompt(str(i))
-            gpt3_answers = gpt3_call(prompt)
+            messages_history = create_prompt(str(i))
+            gpt3_answers = gpt3_call(messages_history)
             answers += list(gpt3_answers.values())
     upload_answers(answers)
 
