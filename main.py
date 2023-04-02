@@ -12,38 +12,71 @@ from compare import get_scores, compare_xlsx
 # Changeable variables
 # --------------------------
 prompt_version = "1"  # check the number txt file in the Prompts folder
-sections = 1  # between 1 and 8
-
+sections = 8  # between 1 and 8
+model_type = "system" # "system" or ""
 
 # Functions
 # --------------------------
 def create_prompt(section):
-    """Read the txt file and append it to the prompt"""
+    """Read the txt file and append it to the messages_history list"""
 
-    with open(f"./Prompts/V{prompt_version}.txt", "r", encoding="utf-8") as f:
-        prompt = f.read()
+    with open(f"./Prompts/{model_type}V{prompt_version}.txt", "r", encoding="utf-8") as f:
+        system = f.read()
     with open(f"./PAES/lenguaje/{section}.txt", "r", encoding="utf-8") as f:
-        prompt = prompt.replace("$$$", f.read())
+        paes_fragment = f.read()
 
-    return prompt
+    messages_history = [
+        {"role": "system", "content": system},
+        {"role": "user", "content": paes_fragment}
+    ]
+    return messages_history
 
 
-def gpt3_call(prompt):
+# def gpt3_call(messages_history):
+#     """API call to OpenAI GPT-3"""
+
+#     response = openai.ChatCompletion.create(
+#         model="gpt-4",
+#         # model="gpt-3.5-turbo",
+#         messages=messages_history,
+#         # temperature=0.7,
+#         # max_tokens=100,
+#         # top_p=1,
+#         # frequency_penalty=0,
+#         # presence_penalty=0,
+#     )
+
+#     answers = response.choices[0].message.content
+#     print("Respuesta: ", answers)
+#     answers = json.loads(answers)
+#     print("Respuesta JSON: ", answers)
+#     print(answers)
+#     print()
+
+#     return answers
+
+def gpt3_call(messages_history):
     """API call to OpenAI GPT-3"""
 
-    response = openai.Completion.create(
-        model="text-davinci-003",
-        # model="text-ada-001", # for testing
-        prompt=prompt,
-        temperature=0.7,
-        max_tokens=100,
-        top_p=1,
-        frequency_penalty=0,
-        presence_penalty=0,
-    )
+    try:
+        response = openai.ChatCompletion.create(
+            model="gpt-4",
+            # model="gpt-3.5-turbo",
+            messages=messages_history,
+        )
 
-    answers = "{" + response.choices[0].text
+        answers = response.choices[0].message.content
+        print("Respuesta: ", answers)
+
+    except openai.error.RateLimitError:
+        print("Modelo sobrecargado. Esperando 5 segundos antes de volver a intentar.")
+        time.sleep(5)
+        gpt3_call(messages_history)
+
+    answers = response.choices[0].message.content
+    print("Respuesta: ", answers)
     answers = json.loads(answers)
+    print("Respuesta JSON: ", answers)
     print(answers)
     print()
 
@@ -55,7 +88,7 @@ def dir_manipulation():
 
     os.chdir("./Resultados")
     len_dir = len(os.listdir()) - 1  # -1 to ignore the test folder
-    xlsx_name = f"V{prompt_version}_{len_dir+1}.xlsx"
+    xlsx_name = f"{model_type}V{prompt_version}_{len_dir+1}.xlsx"
 
     # muy dudosa ejecucion de codigo, pero funciona (ojala algun dia pueda mejorar esto :v (jasjaj copilot me recomendo poner ":v"))
     if xlsx_name in os.listdir():
@@ -135,15 +168,15 @@ if __name__ == "__main__":
             for j in range(1, 3):
                 print("Respondiendo texto: ", i, ".", j)
 
-                prompt = create_prompt(f"{i}.{j}")
-                gpt3_answers = gpt3_call(prompt)
+                messages_history = create_prompt(f"{i}.{j}")
+                gpt3_answers = gpt3_call(messages_history)
                 answers += list(gpt3_answers.values())
 
         else:
             print("Respondiendo texto: ", i)
 
-            prompt = create_prompt(str(i))
-            gpt3_answers = gpt3_call(prompt)
+            messages_history = create_prompt(str(i))
+            gpt3_answers = gpt3_call(messages_history)
             answers += list(gpt3_answers.values())
     upload_answers(answers)
 
