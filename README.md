@@ -1,6 +1,6 @@
 # GPT-PAES
 
-## ¿Que pasa si le pasas la prueba PAES a la IA mas avanzada (GPT4)?
+## ¿Que pasa si le das la PAES a la IA mas avanzada (GPT4)?
 
 #### ¿Que es PAES?
 Prueba de Acceso a la Educación Superior (PAES) es una prueba (anteriormente conocida como PSU o PTU) que debe ser realizada por todo Chileno que quiera acceder a la universidad. En esta prueba se evalúa el nivel de conocimiento de los estudiantes en 3 áreas: Matemáticas, Lenguaje y Ciencias.
