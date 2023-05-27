@@ -32,7 +32,7 @@ def create_prompt(section):
     return messages_history
 
 
-def gpt3_call(messages_history):
+def gpt_call(messages_history):
     """API call to OpenAI GPT-4"""
 
     try:
@@ -48,7 +48,7 @@ def gpt3_call(messages_history):
     except openai.error.RateLimitError:
         print("Modelo sobrecargado. Esperando 5 segundos antes de volver a intentar.")
         time.sleep(5)
-        gpt3_call(messages_history)
+        gpt_call(messages_history)
 
     answers = response.choices[0].message.content
     print("Respuesta: ", answers)
@@ -81,7 +81,7 @@ def dir_manipulation():
     return xlsx_path
 
 
-def upload_answers(gpt3_answers):
+def upload_answers(gpt_answers):
     """Compare all the answers given by the GPT-3 model with the correct answers and then create a xlsx file with the results"""
 
     with open("./PAES/lenguaje/clavijero.txt", "r", encoding="utf-8") as f:
@@ -90,25 +90,25 @@ def upload_answers(gpt3_answers):
     final_answers = []
     correct = 0
     incorrect = 0
-    for i in range(min(len(gpt3_answers), len(correct_answer))):
-        if gpt3_answers[i] == correct_answer[i]:
-            final_answers.append([i + 1, gpt3_answers[i], True])
+    for i in range(min(len(gpt_answers), len(correct_answer))):
+        if gpt_answers[i] == correct_answer[i]:
+            final_answers.append([i + 1, gpt_answers[i], True])
             correct += 1
         else:
-            final_answers.append([i + 1, gpt3_answers[i], False])
+            final_answers.append([i + 1, gpt_answers[i], False])
             incorrect += 1
 
     print()
     print("Respuestas")
     print("--------------------------------------------------------------")
-    print(gpt3_answers)
+    print(gpt_answers)
     print("--------------------------------------------------------------")
     print("✅ ", correct)
     print("❌ ", incorrect)
     print()
 
     # create a xlsx file to post the answers
-    data = list(zip(correct_answer, gpt3_answers))
+    data = list(zip(correct_answer, gpt_answers))
     df = pd.DataFrame(data, columns=["Clavijero", "GPT-PAES"])
     for i in range(len(final_answers)):
         x_pos = 1
@@ -146,14 +146,14 @@ if __name__ == "__main__":
                 print("Respondiendo texto: ", i, ".", j)
 
                 messages_history = create_prompt(f"{i}.{j}")
-                gpt3_answers = gpt3_call(messages_history)
+                gpt3_answers = gpt_call(messages_history)
                 answers += list(gpt3_answers.values())
 
         else:
             print("Respondiendo texto: ", i)
 
             messages_history = create_prompt(str(i))
-            gpt3_answers = gpt3_call(messages_history)
+            gpt3_answers = gpt_call(messages_history)
             answers += list(gpt3_answers.values())
     upload_answers(answers)
 
