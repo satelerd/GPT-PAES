@@ -32,31 +32,8 @@ def create_prompt(section):
     return messages_history
 
 
-# def gpt3_call(messages_history):
-#     """API call to OpenAI GPT-3"""
-
-#     response = openai.ChatCompletion.create(
-#         model="gpt-4",
-#         # model="gpt-3.5-turbo",
-#         messages=messages_history,
-#         # temperature=0.7,
-#         # max_tokens=100,
-#         # top_p=1,
-#         # frequency_penalty=0,
-#         # presence_penalty=0,
-#     )
-
-#     answers = response.choices[0].message.content
-#     print("Respuesta: ", answers)
-#     answers = json.loads(answers)
-#     print("Respuesta JSON: ", answers)
-#     print(answers)
-#     print()
-
-#     return answers
-
 def gpt3_call(messages_history):
-    """API call to OpenAI GPT-3"""
+    """API call to OpenAI GPT-4"""
 
     try:
         response = openai.ChatCompletion.create(
