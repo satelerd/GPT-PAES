@@ -103,8 +103,8 @@ def upload_answers(gpt_answers):
     print("--------------------------------------------------------------")
     print(gpt_answers)
     print("--------------------------------------------------------------")
-    print("✅ ", correct)
-    print("❌ ", incorrect)
+    print("Correctas:   ", correct)
+    print("Incorrectas: ", incorrect)
     print()
 
     # create a xlsx file to post the answers
